@@ -16,6 +16,9 @@ const stack = createStackNavigator({
         screen: CounterApp,
     }
 },
+    {
+        initialRouteName: "HomeScreen",
+    }
 );
 const App = createAppContainer(stack);
 
