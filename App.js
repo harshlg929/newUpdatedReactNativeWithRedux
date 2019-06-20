@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 
-import store from './Reducers/index';
-import CounterAction from './Actions/CounterAction';
+import store from './src/Reducers/index';
+import Routes from './src/Components/Routes';
 
 export default class App extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ export default class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <CounterAction />
+                <Routes />
             </Provider>
         );
     }

@@ -5,8 +5,10 @@ import {
     View,
     Button
 } from 'react-native';
+import { connect } from 'react-redux';
+import * as Actions from './../Actions/ActionTypes';
 
-export default class CounterApp extends Component {
+class CounterApp extends Component {
 
     constructor(props) {
         super(props)
@@ -53,3 +55,14 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
+const mapStateToProps = (state) => ({
+    count: state.counterReducer.count
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    increment: () => dispatch({ type: Actions.COUNTER_INCREMENT }),
+    decrement: () => dispatch({ type: Actions.COUNTER_DECREMENT }),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterApp);
